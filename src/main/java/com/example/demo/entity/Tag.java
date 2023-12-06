@@ -3,7 +3,6 @@ package com.example.demo.entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import org.hibernate.annotations.NaturalId;
 
@@ -28,11 +27,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler","posts"})
-public class Tag implements Serializable{
- 
-    /**
-	 * 
-	 */
+public class Tag implements Serializable {
+	
 	private static final long serialVersionUID = -1769132302079304237L;
 
 	@Id
@@ -51,19 +47,5 @@ public class Tag implements Serializable{
  
     public Tag(String name) {
         this.name = name;
-    }
- 
-    //Getters and setters omitted for brevity
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Tag tag = (Tag) o;
-        return Objects.equals(name, tag.name);
-    }
- 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
     }
 }
