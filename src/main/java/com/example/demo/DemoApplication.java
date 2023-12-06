@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.example.demo.entity.Post;
 import com.example.demo.entity.Tag;
 import com.example.demo.repo.PostRepo;
-import com.example.demo.repo.PostTagRepo;
 import com.example.demo.repo.TagRepo;
 
 @SpringBootApplication
