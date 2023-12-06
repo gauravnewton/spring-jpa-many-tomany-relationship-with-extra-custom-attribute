@@ -25,10 +25,7 @@ import lombok.Setter;
 @Setter
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler","tags"})
 public class Post implements Serializable {
- 
-    /**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -1818344266158332340L;
 
 	@Id
@@ -50,13 +47,10 @@ public class Post implements Serializable {
     public Post(String title) {
         this.title = title;
     }
- 
-    //Getters and setters omitted for brevity
- 
+  
     public void addTag(Tag tag) {
         PostTag postTag = new PostTag(this, tag);
         tags.add(postTag);
-        tag.getPosts().add(postTag);
     }
  
     public void removeTag(Tag tag) {
@@ -72,16 +66,5 @@ public class Post implements Serializable {
                 postTag.setTag(null);
             }
         }
-    }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Post)) return false;
-        return id != null && id.equals(((Post) o).getId());
-    }
- 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
     }
 }

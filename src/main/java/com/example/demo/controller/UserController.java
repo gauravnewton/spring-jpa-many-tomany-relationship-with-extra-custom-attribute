@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import java.awt.print.Book;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +20,10 @@ public class UserController {
     @Autowired
     TagRepo tagRepo;
     
-//    @PostMapping("/create")
-//    public Book createUser(@RequestBody Book user) {
-//        return userRepo.save(user);
-//    }
 
     @GetMapping("/{postId}")
     public Post getUser(@PathVariable Long postId) {
         Optional<Post> post = postRepo.findById(postId);
-        System.out.println("Sdfsdfdsfdsfd");
         return post.get();
     }
 }
